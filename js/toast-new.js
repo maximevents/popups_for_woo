@@ -13,6 +13,8 @@ function showToast(message, imageUrl) {
     // Create image element for the icon
     var icon = document.createElement('img');
     icon.src = imageUrl; // Set the image source to the provided URL
+    icon.style.width = '30px'; // Set the width of the image (adjust as needed)
+    icon.style.height = '30px'; // Set the height of the image (adjust as needed)
     icon.style.marginRight = '10px'; // Adjust spacing between icon and message
     toast.appendChild(icon); // Append the icon to the toast element
 
@@ -39,6 +41,7 @@ function showToast(message, imageUrl) {
         toast.remove();
     }, 3000); // Adjust delay as needed
 }
+
 
 
         // Make a request to your Cloud Function endpoint to fetch toast messages
