@@ -68,10 +68,17 @@ script.onload = function() {
                 position: fixed;
                 bottom: 20px;
                 right: 20px;
+                left: 20px;
                 z-index: 9999;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
+            }
+
+            @media (min-width: 640px) {
+            #toast-container {
+                max-width: 350px;
+              }
             }
 
             /* Toast message styles */
@@ -100,7 +107,8 @@ script.onload = function() {
                 z-index: 50;
                 color: rgb(47, 48, 60);
                 box-sizing: border-box;
-                font-family: "Gabarito", ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                font-weight: 600;
                 text-align: left;
             }
 
