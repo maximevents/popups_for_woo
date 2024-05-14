@@ -47,6 +47,7 @@ $.ajax({
     url: 'https://asia-southeast1-aask-5ad82.cloudfunctions.net/popupsForWoo',
     method: 'GET',
     success: function(data) {
+        console.log('Received data:', data); // Log the data variable
         // Display received messages as toasts
         data.forEach(message => {
             showToast(message);
