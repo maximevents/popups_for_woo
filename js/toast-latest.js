@@ -4,7 +4,7 @@ script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js';
 script.onload = function() {
     // Once jQuery is loaded, execute the rest of the script
     $(document).ready(function() {
-        
+
 // Function to display toast messages with icons
 function showToast(message, imageUrl) {
     // Create toast element
@@ -17,8 +17,8 @@ function showToast(message, imageUrl) {
     // Create image element for the icon
     var icon = document.createElement('img');
     icon.src = imageUrl; // Set the image source to the provided URL
-    icon.style.width = '30px'; // Set the width of the image (adjust as needed)
-    icon.style.height = '30px'; // Set the height of the image (adjust as needed)
+    icon.style.width = '20px'; // Set the width of the image (adjust as needed)
+    icon.style.height = '20px'; // Set the height of the image (adjust as needed)
     icon.style.marginRight = '10px'; // Adjust spacing between icon and message
     toast.appendChild(icon); // Append the icon to the toast element
 
