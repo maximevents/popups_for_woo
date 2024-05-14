@@ -4,11 +4,15 @@ script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js';
 script.onload = function() {
     // Once jQuery is loaded, execute the rest of the script
     $(document).ready(function() {
+        
 // Function to display toast messages with icons
 function showToast(message, imageUrl) {
     // Create toast element
     var toast = document.createElement('div');
     toast.className = 'toast';
+    toast.style.backgroundColor = '#ffffff'; // Set background color to white
+    toast.style.border = '1px solid #dddddd'; // Set light grey border
+    toast.style.padding = '10px'; // Add padding to provide spacing between content and border
 
     // Create image element for the icon
     var icon = document.createElement('img');
@@ -23,6 +27,15 @@ function showToast(message, imageUrl) {
     messageSpan.textContent = message; // Set the text content to the provided message
     toast.appendChild(messageSpan); // Append the message to the toast element
 
+    // Create close button
+    var closeButton = document.createElement('span');
+    closeButton.textContent = '×'; // Close icon (you can customize the icon as needed)
+    closeButton.className = 'close-button';
+    closeButton.addEventListener('click', function() {
+        toast.remove(); // Remove the toast when the close button is clicked
+    });
+    toast.appendChild(closeButton); // Append the close button to the toast element
+
     // Append toast to the container or create the container if it doesn't exist
     var toastContainer = document.getElementById('toast-container');
     if (!toastContainer) {
@@ -34,13 +47,16 @@ function showToast(message, imageUrl) {
         toastContainer.style.zIndex = '9999';
         document.body.appendChild(toastContainer);
     }
-    toastContainer.appendChild(toast);
+    
+    // Add spacing between each toast message
+    var existingToasts = toastContainer.getElementsByClassName('toast');
+    if (existingToasts.length > 0) {
+        toast.style.marginTop = '12px'; // Add top margin for spacing between messages
+    }
 
-    // Automatically remove toast after a delay
-    setTimeout(function() {
-        toast.remove();
-    }, 3000); // Adjust delay as needed
+    toastContainer.appendChild(toast);
 }
+
 
 
 
