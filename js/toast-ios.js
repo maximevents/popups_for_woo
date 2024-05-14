@@ -68,7 +68,6 @@ var toastStyles = `
         max-width: 80%;
         margin-bottom: 12px;
         animation: slide-in 0.3s ease-out;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         color: #333;
     }
 
