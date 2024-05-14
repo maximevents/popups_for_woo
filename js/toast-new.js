@@ -50,8 +50,8 @@ function showToast(message, imageUrl) {
             method: 'GET',
             success: function(data) {
                 // Display received messages as toasts
-                data.forEach(message => {
-                    showToast(message);
+                data.forEach(record => {
+                    showToast(record.message, record.imageUrl);
                 });
             },
             error: function(error) {
